@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>News Scraper with Mongodb and Mongoose</title>
+     <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap Jquery -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Fontawesome for icons and symbols -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Java Script -->
+    <script src="app.js"></script>
+    <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" media="screen" title="no title" charset="utf-8">  
+   
+  </head>
+  <body>
+    <div id="wrapper">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="topNav">
+            <a class="navbar-brand navInfo" href="/">Email App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                      <a class="nav-link navInfo" href="/compose">Compose Message</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link navInfo" href="/">Inbox </a>
+                </li>
+                <li class="nav-item active">
+                        <a class="nav-link navInfo" href="/saved">Archieve Folder <span class="sr-only">(current)</span></a>
+                 </li>
+               
+                <form class="form-inline">
+                    <button class="btn btn-outline-warning" onclick="location.href='/scrape'" id="scrape" type="button">Refresh Emails</button>
+                    <button class="btn btn-outline-warning" onclick="location.href='/remove'" id="clear" type="button">Delete All Emails</button>
+                  </form>
+              </ul>
+            </div>
+          </nav>
+      
+          <div id="background">
+                <div class="row topPageInfo wow fadeIn">
+                  
+                  <div class="col-md-12 text-center name">
+                      <h1 class="display-2 font-weight-bold about">Archieve Folder</h1>
+                      <p class="display-4 about">
+                          <strong></strong>
+                      </p>
+                      <a href="#savedArticlesHeading" class="btn btn-unique btn-lg about goTo">Go to Archieved Messages
+                          <i class="fas fa-arrow-down ml-2"></i>
+                      </a>
+                  </div>
+                  <div class="col-md-2"></div>
+                </div>
+           </div>
+      
+      <h2 id="savedArticlesHeading">Archieved Messages:</h2>
+      <div id="savedArticles"></div>
+      <div id="notes" role="dialog"></div>
+    </div>
+    
+  </body>
+</html>

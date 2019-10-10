@@ -1,0 +1,20 @@
+[
+    {
+    "_id": "0",
+    "from":"Laura",
+    "title": "Movie",
+    "message": "Hi, How are you doing? can we go to movie tomorrow?",
+    "saved": false,
+    "delete": false,
+    "time": "1 hour ago"
+    },
+    {
+    "_id": "1",
+    "from":"David",
+    "title": "Just bought new car",
+    "message": "Hi, I am doing awesome. I just bought a new car. Can we meet up on weekend?",
+    "saved": false,
+    "delete": false,
+    "time": "2 hour ago"
+    }
+    ]
