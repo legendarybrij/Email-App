@@ -243,6 +243,42 @@ $(document).on("click", "#savenote", function() {
   $("#bodyinput").val("");
 });
 
+// $(document).on("click", "#composeEmail", function() {
+//   // Grab the id associated with the article from the submit button
+//   var d = new Date();
+//   var thisId = d.getTime();
+
+//   // Run a POST request to change the note, using what's entered in the inputs
+//   $.ajax({
+//     method: "POST",
+//     url: "/sent/",
+//     data: {
+//       // Value taken from title input
+//       _id: thisId,
+//       title: $("#inputSubject").val(),
+//       from = $("#inputEmail").val(),
+//       message = $("#inputMessage").val(),
+//       saved = false,
+//       delete = false,
+//       time = d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()
+//     }
+//   })
+//     // With that done
+//     .then(function(data) {
+//       // Log the response
+//       console.log(data);
+//     })
+//     .catch(function(err) {
+//       // If an error occurred, log it
+//       console.log(err);
+//     });
+
+//   // Also, remove the values entered in the input and textarea for note entry
+//   $("#inputSubject").val("");
+//   $("#inputEmail").val("");
+// });
+
+
 
 
 // Manually done the toggle button in navbar when windows get smaller since it was acting weird on click

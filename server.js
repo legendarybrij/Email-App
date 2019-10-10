@@ -34,28 +34,6 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 var d = new Date();
 
-app.get("/composeEmail", function(req, res) {
-    var result = {};
-      result.from = $("#inputEmail").val();
-      result.title = $("#inputSubject").val();
-      result.message = $("#inputMessage").val();
-      result.saved = false;
-      result.delete = false;
-      result.time = d.getHours();
-      // console.log(incoming[i].from, result.from);
-      // Create a new Article using the `result` object built from scraping
-      db.Article.create(result)
-      .then(function(dbArticle) {
-        // View the added result in the console
-      // console.log("db",dbArticle);
-      })
-      .catch(function(err) {
-        // If an error occurred, log it
-        console.log(err);
-      });
-});
-
-
 // Routes
 app.get("/scrape", function(req, res) {
   db.Article.deleteMany({})
