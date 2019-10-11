@@ -9,14 +9,19 @@ $.getJSON("/articles", function(data) {
     var noteButton = $("<button>");
     var saveButton = $("<button>");
     var deleteArticle = $("<button>");
+    var from = $("<p>");
     var paragraph = $("<p>");
     var time =$("<p>");
     var containerDiv=$("<div>");
 
+    
+    
     containerDiv.addClass("newsTitle card-header");
+    containerDiv.append(from);
+    from.text("From: "+data[i].from);
     containerDiv.append(title);
     title.addClass("articleTitle");
-    title.text(i+1+". "+data[i].title);
+    title.text("Subject: "+data[i].title);
     title.attr("data-id",data[i]._id);
     title.append("<br>");
 
@@ -68,15 +73,18 @@ $.getJSON("/savedarticles", function(data) {
     var noteButton = $("<button>");
     var deleteButton = $("<button>");
     var paragraph = $("<p>");
+    var from = $("<p>");
     var time =$("<p>");
     var containerDiv=$("<div>");
 
   
 
     containerDiv.addClass("newsTitle card-header");
+    containerDiv.append(from);
+    from.text("From: "+data[i].from);
     containerDiv.append(title);
     title.addClass("articleTitle");
-    title.text(i+1+". "+data[i].title);
+    title.text("Subject: "+data[i].title);
     title.attr("data-id",data[i]._id);
     title.append("<br>");
 
@@ -121,15 +129,18 @@ $.getJSON("/sent", function(data) {
     var noteButton = $("<button>");
     var deleteButton = $("<button>");
     var paragraph = $("<p>");
+    var from = $("<p>");
     var time =$("<p>");
     var containerDiv=$("<div>");
 
   
 
     containerDiv.addClass("newsTitle card-header");
+    containerDiv.append(from);
+    from.text("From: "+data[i].from);
     containerDiv.append(title);
     title.addClass("articleTitle");
-    title.text(i+1+". "+data[i].title);
+    title.text("Subject: "+data[i].title);
     title.attr("data-id",data[i]._id);
     title.append("<br>");
 
