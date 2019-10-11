@@ -32,6 +32,9 @@
                 <li class="nav-item">
                   <a class="nav-link navInfo" href="/">Inbox </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link navInfo" href="/send">Sent</a>
+                </li>
                 <li class="nav-item active">
                         <a class="nav-link navInfo" href="/saved">Archieve Folder <span class="sr-only">(current)</span></a>
                  </li>
@@ -39,6 +42,7 @@
                 <form class="form-inline">
                     <button class="btn btn-outline-warning" onclick="location.href='/scrape'" id="scrape" type="button">Refresh Emails</button>
                     <button class="btn btn-outline-warning" onclick="location.href='/remove'" id="clear" type="button">Delete All Emails</button>
+                    <button class="btn btn-outline-warning" onclick="location.href='/deleteAllSent'" id="sentClear" type="button">Delete All Sent Emails</button>
                   </form>
               </ul>
             </div>

@@ -20,7 +20,7 @@
   <body>
     <div id="wrapper">
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="topNav">
-            <a class="navbar-brand navInfo" href="#">Email App</a>
+            <a class="navbar-brand navInfo" href="/">Email App</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,13 +33,17 @@
                   <a class="nav-link navInfo" href="/">Inbox</a>
                 </li>
                 <li class="nav-item">
+                        <a class="nav-link navInfo" href="/send">Sent</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link navInfo" href="/saved">Archieve Folder</a>
                 </li>
                
                 <form class="form-inline">
                     <button class="btn btn-outline-warning" onclick="location.href='/scrape'" id="scrape" type="button">Refresh Emails</button>
                     <button class="btn btn-outline-warning" onclick="location.href='/remove'" id="clear" type="button">Delete Emails</button>
-                  </form>
+                    <button class="btn btn-outline-warning" onclick="location.href='/deleteAllSent'" id="sentClear" type="button">Delete All Sent Emails</button>
+                </form>
               </ul>
             </div>
           </nav>
@@ -56,8 +60,8 @@
                       
                                    <div class="row">
                                        
-                                       <div class="col-11" id="inputEmail"> 
-                                           <input type="text" class="responsive" placeholder="example@gmail.com">
+                                       <div class="col-11"> 
+                                           <input type="text" id="inputEmail" class="responsive" placeholder="example@gmail.com">
                                        </div>
                                    </div>
 
@@ -70,8 +74,8 @@
                        
                                     <div class="row">
                                         
-                                        <div class="col-11" id="inputSubject"> 
-                                            <input type="text" class="responsive" placeholder="What is the email regarding?">
+                                        <div class="col-11"> 
+                                            <input type="text" id="inputSubject" class="responsive" placeholder="What is the email regarding?">
                                         </div>
                                     </div>
 
@@ -83,12 +87,12 @@
                                    </div>
                                    <div class="row">
                                        
-                                       <div class="col-11" id="inputMessage"> 
-                                           <textarea message="" class="responsive" cols="0" rows="20"></textarea>
+                                       <div class="col-11"> 
+                                           <textarea message="" id="inputMessage" class="responsive" cols="0" rows="20"></textarea>
                                        </div>
                                    </div>
                       
-                                   <button type="submit" id="composeEmail">Send</button>
+                                   <button type="submit" class="btn btn-warning" id="composeEmail">Send</button>
             </div>
             
                 

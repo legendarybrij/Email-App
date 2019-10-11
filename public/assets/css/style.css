@@ -16,7 +16,7 @@ body { background-color: #fff; }
 }
 
 
-.about, #articlesHeading, #savedArticlesHeading, #composeHeading {
+.about, #articlesHeading, #savedArticlesHeading, #composeHeading, #sentArticlesHeading  {
   transition: ease-out;
   transition-duration: 0.5s;
   color: #fff;
@@ -25,7 +25,7 @@ body { background-color: #fff; }
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
 } 
 
-#articlesHeading, #savedArticlesHeading {
+#articlesHeading, #savedArticlesHeading, #sentArticlesHeading {
    padding-top:80px; /* This helps displaying Latest Articles Heading visible on click scrape new articles   */
 }
 
@@ -44,10 +44,10 @@ body { background-color: #fff; }
   color:#fff;
 }
 
-#scrape {
+#scrape, #clear {
 margin-right: 10px;
 }
-#scrape:hover, #clear:hover, .goTo:hover {
+#scrape:hover, #clear:hover, .goTo:hover, #sentClear:hover, #composeEmail:hover {
   background-color: gold;
   color:#fff;
   text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 30px gold, 0 0 40px gold, 0 0 55px gold, 0 0 75px gold;
@@ -62,13 +62,16 @@ margin-right: 10px;
   margin-right: 5px;
   padding-top: 10%;
 }
-#articles, #savedArticles, #compose {
+#articles, #savedArticles, #compose, #sentArticles {
   display: inline-block;
   overflow: auto;
   width: 60%;
   height: 500px;
   opacity: 0.9;
   box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #b3adad, 0 0 30px #dfded9;
+}
+#composeEmail{
+  margin-top:10px;
 }
 #notes {
   float: right;
@@ -137,18 +140,6 @@ textarea {
 }
 
 
-/* .movieNewsDate{
-    margin-top:20px;
-    font-size: 10px;
-    text-align: left;
-}
-
-.movieNewsContent{
-    text-align: left;
-    margin-top:5px;
-    font-size: 12px;
-
-} */
 .articleNewsImage{
   width:280px;
   height:200px;

@@ -42,7 +42,6 @@ app.get("/scrape", function(req, res) {
       res.json(err);
     });
 
-  
     var result = {};
     for(var i=0; i<incoming.length;i++)
      {
@@ -63,10 +62,8 @@ app.get("/scrape", function(req, res) {
         // If an error occurred, log it
         console.log(err);
       });
-      
+
      }
-     //console.log("result::",result);
-   
      
         res.redirect('/#articlesHeading');
   
@@ -85,19 +82,6 @@ app.get("/remove", function(req, res) {
 app.get("/articles", function(req, res) {
   // Grab every document in the Articles collection
   db.Article.find({delete: false, saved:false})
-    .then(function(dbArticle) {
-      // If we were able to successfully find Articles, send them back to the client
-      res.json(dbArticle);
-    })
-    .catch(function(err) {
-      // If an error occurred, send it to the client
-      res.json(err);
-    });
-});
-
-app.get("/sent", function(req, res) {
-  // Grab every document in the Articles collection
-  db.Article.find({})
     .then(function(dbArticle) {
       // If we were able to successfully find Articles, send them back to the client
       res.json(dbArticle);
@@ -201,6 +185,58 @@ app.post("/articles/:id", function(req, res) {
 });
 
 
+app.post("/sent", function(req, res) {
+  // Grab every document in the Articles collection
+  db.Send.create(req.body)
+      .then(function(dbSend) {
+        // View the added result in the console
+      // console.log("db",dbArticle);
+      })
+      .catch(function(err) {
+        // If an error occurred, log it
+        console.log(err);
+      });
+
+});
+
+app.get("/sent", function(req, res) {
+  // Grab every document in the Articles collection
+  db.Send.find({delete: false})
+    .then(function(dbSend) {
+      // If we were able to successfully find Articles, send them back to the client
+      res.json(dbSend);
+    })
+    .catch(function(err) {
+      // If an error occurred, send it to the client
+      res.json(err);
+    });
+
+});
+
+app.get("/deleteAllSent", function(req, res) {
+  // Grab every document in the Articles collection
+  db.Send.deleteMany({})
+  .catch(function(err) {
+    // If an error occurred, send it to the client
+    res.json(err);
+  });
+  res.redirect('/#'+"Removed+Successfully");
+
+});
+
+app.post("/sent/:id", function(req, res) {
+  // Grab every document in the Articles collection
+  db.Send.findOneAndUpdate({ _id: req.params.id }, {delete: true},{ new: true })
+    .then(function(dbSend) {
+      // If we were able to successfully find an Article with the given id, send it back to the client
+      res.json(dbSend);
+    })
+    .catch(function(err) {
+      // If an error occurred, send it to the client
+      res.json(err);
+    });
+});
+
 app.get("/saved", function (req, res) {
   res.sendfile("./public/saved.html");
 });
@@ -211,6 +247,10 @@ app.get("/", function (req, res) {
 
 app.get("/compose", function (req, res) {
   res.sendfile("./public/compose.html");
+});
+
+app.get("/send", function (req, res) {
+  res.sendfile("./public/send.html");
 });
 
 // Render 404 page for any unmatched routes

@@ -20,7 +20,7 @@
   <body>
     <div id="wrapper">
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="topNav">
-            <a class="navbar-brand navInfo" href="#">Email App</a>
+            <a class="navbar-brand navInfo" href="/">Email App</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,12 +33,16 @@
                   <a class="nav-link navInfo" href="/">Inbox <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link navInfo" href="/send">Sent</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link navInfo" href="/saved">Archieve Folder</a>
                 </li>
                
                 <form class="form-inline">
                     <button class="btn btn-outline-warning" onclick="location.href='/scrape'" id="scrape" type="button">Refresh Emails</button>
                     <button class="btn btn-outline-warning" onclick="location.href='/remove'" id="clear" type="button">Delete Emails</button>
+                    <button class="btn btn-outline-warning" onclick="location.href='/deleteAllSent'" id="sentClear" type="button">Delete All Sent Emails</button>  
                   </form>
               </ul>
             </div>
